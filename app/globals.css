@@ -1,0 +1,200 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 142.1 76.2% 36.3%;
+    --primary-foreground: 355.7 100% 97.3%;
+    --secondary: 210 40% 98%;
+    --secondary-foreground: 222.2 84% 4.9%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 222.2 84% 4.9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 142.1 76.2% 36.3%;
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 142.1 70.6% 45.3%;
+    --primary-foreground: 144.9 80.4% 10%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 142.4 71.8% 29.2%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-black;
+    overflow-x: hidden;
+  }
+}
+
+/* Ensure all text is black by default */
+@layer base {
+  body {
+    @apply bg-background text-black;
+    overflow-x: hidden;
+  }
+}
+
+/* Override any gray text to black */
+.text-gray-700,
+.text-gray-800,
+.text-gray-600 {
+  color: black !important;
+}
+
+/* Keep placeholder text gray for better UX */
+.placeholder\:text-gray-500::placeholder {
+  color: rgb(107 114 128) !important;
+}
+
+.font-orbitron {
+  font-family: var(--font-orbitron), monospace;
+}
+
+/* Custom colors for cyan and mint */
+@layer utilities {
+  .bg-cyan-50 {
+    background-color: rgb(236 254 255);
+  }
+  .bg-cyan-100 {
+    background-color: rgb(207 250 254);
+  }
+  .bg-cyan-200 {
+    background-color: rgb(165 243 252);
+  }
+  .bg-cyan-300 {
+    background-color: rgb(103 232 249);
+  }
+  .bg-cyan-400 {
+    background-color: rgb(34 211 238);
+  }
+
+  .bg-mint-50 {
+    background-color: rgb(240 253 250);
+  }
+  .bg-mint-100 {
+    background-color: rgb(209 250 229);
+  }
+  .bg-mint-200 {
+    background-color: rgb(167 243 208);
+  }
+  .bg-mint-300 {
+    background-color: rgb(110 231 183);
+  }
+  .bg-mint-400 {
+    background-color: rgb(52 211 153);
+  }
+  .bg-mint-500 {
+    background-color: rgb(16 185 129);
+  }
+
+  /* Add beige colors */
+  .bg-amber-50 {
+    background-color: rgb(255 251 235);
+  }
+  .bg-amber-100 {
+    background-color: rgb(254 243 199);
+  }
+
+  .text-cyan-400 {
+    color: rgb(34 211 238);
+  }
+  .text-mint-100 {
+    color: rgb(209 250 229);
+  }
+  .text-mint-400 {
+    color: rgb(52 211 153);
+  }
+
+  .border-cyan-200 {
+    border-color: rgb(165 243 252);
+  }
+  .border-mint-200 {
+    border-color: rgb(167 243 208);
+  }
+}
+
+/* Perfect scrolling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(34, 211, 238, 0.1);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, rgba(34, 211, 238, 0.6), rgba(52, 211, 153, 0.6));
+  border-radius: 10px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, rgba(34, 211, 238, 0.8), rgba(52, 211, 153, 0.8));
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-corner {
+  background: rgba(34, 211, 238, 0.1);
+}
+
+/* Focus styles */
+input:focus,
+button:focus {
+  outline: 2px solid rgba(34, 211, 238, 0.5);
+  outline-offset: 2px;
+}
+
+/* Glassmorphism effects */
+.glass {
+  backdrop-filter: blur(20px) saturate(180%);
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Perfect page layout */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-feature-settings: "rlig" 1, "calt" 1;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
